@@ -1,0 +1,67 @@
+@mixin buttonsStyles {
+  .btn-filter {
+    @apply flex items-center;
+    svg {
+      @apply ml-1;
+      color: rgba(0,0,0, 0.2);
+    }
+  }
+  .icon-btn {
+    @apply -my-1.5 -mx-3;
+  }
+  .btn-loader {
+    @apply w-7 h-7 -mb-1 border-2 border-white/40 border-b-white border-r-white rounded-full inline-block animate-spin;
+  }
+  .btn {
+    @apply w-full sm:w-auto py-1 px-2 items-center justify-center cursor-pointer rounded flex transition gap-2 border-gray-300 border;
+    &:active:not(:disabled) {
+      @apply outline outline-4 outline-offset-2 outline-gray-200;
+    }
+    &:disabled, &.disabled {
+      @apply opacity-35 cursor-default;
+    }
+    .icon {
+      @extend .icon-btn;
+    }
+  }
+  .btn-main {
+    @extend .btn;
+    &.loading {
+      &:after {
+        @extend .icon-btn;
+        @apply content-[''] w-7 h-7 -mb-1 border-2 border-white/40 border-b-white border-r-white rounded-full inline-block animate-spin;
+      }
+    }
+  }
+
+  .btn-base {
+    @apply bg-gray-100;
+    &:hover:not(:disabled) {
+      @apply bg-gray-300;
+    }
+    &,&:active:not(:disabled) {
+      @apply text-black;
+    }
+    &.loading {
+      &:after {
+        @apply border-2 border-black/40 border-b-black/80 border-r-black/80;
+      }
+    }
+  }
+
+  .btn-danger {
+    @apply bg-red-100 border-red-500;
+    &:hover:not(:disabled) {
+      @apply bg-red-200;
+    }
+    &,&:active:not(:disabled) {
+      @apply text-red-500;
+    }
+    &.loading {
+      &:after {
+        @apply border-2 border-black/40 border-b-black/80 border-r-black/80;
+      }
+    }
+  }
+
+}

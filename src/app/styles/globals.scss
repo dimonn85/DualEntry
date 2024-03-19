@@ -1,0 +1,34 @@
+@import './buttons/buttons';
+@import "@radix-ui/themes/styles.css";
+@import "../styles/theme-config.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body,html {
+    @apply min-h-full h-full;
+  }
+}
+
+@layer components {
+  @include buttonsStyles;
+  .table-dots-menu {
+    &:hover {
+      .table-delete-btn {
+        @apply block;
+      }
+    }
+  }
+  .table-wrapper {
+    @apply overflow-y-auto;
+  }
+  .search-bar + div {
+    background: transparent;
+    box-shadow: none;
+  }
+}
+.rt-CheckboxButton:where(.rt-variant-surface):where([data-state=checked]) {
+  background-color: var(--accent-9);
+}

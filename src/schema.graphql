@@ -1,0 +1,23 @@
+type InvoiceItem {
+  id: String
+  issue_date: String
+  due_date: String
+  number: String
+  customer: String
+  company_name: String
+  total: String
+  currency: String
+  exchange_rate: String,
+}
+
+type InvoiceData {
+  search: String
+  sortField: String
+  sortOrder: String
+  total: Int
+  items: [InvoiceItem]
+}
+
+type Query {
+  invoice(offset: Int = 0, limit: Int = 4, search: String, sortField: String, sortOrder: String): InvoiceData
+}
