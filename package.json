@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "concurrently -k \"node src/mocks/index.js\" \"cross-env GRAPHQL_ENDPOINT=\"http://localhost:4001/\" next dev\"",
-    "build": "concurrently -k \"node src/mocks/index.js\"  \"cross-env GRAPHQL_ENDPOINT=\"http://localhost:4001/\" next build\"",
+    "build": "concurrently -k \"node src/mocks/index.js\"  \"cross-env GRAPHQL_ENDPOINT=\"https://dual-entry.vercel.app/\" next build\"",
     "start": "next start",
     "lint": "next lint"
   },
